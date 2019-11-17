@@ -5,7 +5,7 @@ class Song
 
 
   def self.table_name
-    self.to_s.downcase.pluralize
+    self.to_s.downcase.pluralize #pluralize is available via the active_support/inflector code library that we require above. 
   end
 
   def self.column_names
