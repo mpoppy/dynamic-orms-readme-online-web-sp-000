@@ -28,7 +28,7 @@ class Song
 
   def initialize(options={}) #metaprogramming initialize method to take a hash of key value arugments without explicitly naming them
     options.each do |property, value|
-      self.send("#{property}=", value) #send() interpolates the name of each key as a method that we set equal to the value
+      self.send("#{property}=", value) #send() interpolates the name of each key as a method that we set equal to the value (as long as each as a corresponding attr_accessor the method will work)
     end
   end
 
