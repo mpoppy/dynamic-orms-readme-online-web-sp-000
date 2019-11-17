@@ -26,7 +26,7 @@ class Song
     attr_accessor col_name.to_sym #attr_accessor must be symbols
   end
 
-  def initialize(options={})
+  def initialize(options={}) #metaprogramming initialize method to take a hash of key value arugments without explicitly naming them
     options.each do |property, value|
       self.send("#{property}=", value)
     end
