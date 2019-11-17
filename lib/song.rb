@@ -23,7 +23,7 @@ class Song
   end
 
   self.column_names.each do |col_name| #we can tell our class to have attr_accessors named after each column name
-    attr_accessor col_name.to_sym
+    attr_accessor col_name.to_sym #attr_accessor must be symbols
   end
 
   def initialize(options={})
