@@ -19,7 +19,7 @@ class Song
     table_info.each do |column|
       column_names << column["name"]
     end
-    column_names.compact
+    column_names.compact #compact is used to get rid of any nil values that may end up in our collection
   end
 
   self.column_names.each do |col_name|
