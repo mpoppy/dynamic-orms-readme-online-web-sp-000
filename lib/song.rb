@@ -22,7 +22,7 @@ class Song
     column_names.compact #compact is used to get rid of any nil values that may end up in our collection
   end
 
-  self.column_names.each do |col_name|
+  self.column_names.each do |col_name| #we can tell our class to have attr_accessors named after each column name
     attr_accessor col_name.to_sym
   end
 
