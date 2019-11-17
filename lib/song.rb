@@ -38,7 +38,7 @@ class Song
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{table_name_for_insert}")[0][0]
   end
 
-  def table_name_for_insert
+  def table_name_for_insert #in order to use a class method inside an instance method
     self.class.table_name
   end
 
