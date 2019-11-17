@@ -4,14 +4,14 @@ require 'active_support/inflector'
 class Song
 
 
-  def self.table_name
-    self.to_s.downcase.pluralize #pluralize is available via the active_support/inflector code library that we require above. 
+  def self.table_name #method that grabs us the table name
+    self.to_s.downcase.pluralize #pluralize is available via the active_support/inflector code library that we require above.
   end
 
-  def self.column_names
+  def self.column_names #method that grabs the column values
     DB[:conn].results_as_hash = true
 
-    sql = "pragma table_info('#{table_name}')"
+    sql = "pragma table_info('#{table_name}')" #this is to query a table for the names of all its columns -> returns an array of hashes because of #results_as_hash()
 
     table_info = DB[:conn].execute(sql)
     column_names = []
