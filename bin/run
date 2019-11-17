@@ -10,5 +10,6 @@ puts "song name: " + song.name
 puts "song album: " + song.album
 song_two = Song.new(name: "Jingle Bells", album: "rocking around the xmas tree")
 song.save
+song_two.save
 binding.pry
 DB[:conn].execute("SELECT * FROM songs")
