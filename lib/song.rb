@@ -52,7 +52,7 @@ class Song
 
   def col_names_for_insert
     self.class.column_names.delete_if {|col| col == "id"}.join(", ") #sqlite already creates an ID column when we insert so we want to check/remove ID from the insert
-  end
+  end # the join takes the array of column names and makes them a comma separated list to use in our sql query. 
 
   def self.find_by_name(name)
     sql = "SELECT * FROM #{self.table_name} WHERE name = '#{name}'"
