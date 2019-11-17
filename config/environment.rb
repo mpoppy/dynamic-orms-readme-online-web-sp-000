@@ -13,4 +13,4 @@ sql = <<-SQL
 SQL
 
 DB[:conn].execute(sql)
-DB[:conn].results_as_hash = true
+DB[:conn].results_as_hash = true # by adding this the results from a select statement don't return a DB row as an array, but as a hash with the column names as keys. 
